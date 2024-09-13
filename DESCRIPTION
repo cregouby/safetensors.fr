@@ -1,0 +1,30 @@
+Package: safetensors.fr
+Type: Translation-module
+Title: Le format de fichier Safetensors
+Version: 0.1.2.9000
+Date: 2024-05-26
+Authors@R: c(
+    person(given = "Christophe",
+           family = "Regouby",
+           role = c("aut", "cre", "cph"),
+           email = "christophe.regouby@free.fr"
+           )
+    )
+Description: Un format de fichiers pour la sauvegarde des tenseurs qui est sécurisé
+  (ne permet pas l'exécution de code), rapide et facile à implémenter. 'Safetensors' 
+  permet aussi l'échange inter-languages et la compatibilité inter-framework. Ça fait 
+  de lui le format de choix pour la sauvegarde des poids des modèles.
+Author: Who wrote it
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: More about what it does (maybe more than one line)
+License:  MIT + file LICENSE
+Encoding: UTF-8
+Language: fr
+BugReports: https://github.com/cregouby/safetensors.fr/issues
+Translates: safetensors (== 0.1.2.9000)
+LazyData: true
+imports:
+    rhelpi18n
+Remotes: 
+    eliocamp/rhelpi18n
+RoxygenNote: 7.3.2
