@@ -1,0 +1,63 @@
+title:
+  original: Writes a list of tensors to the safetensors format
+  translation: Sauvegarde une liste de tenseurs au format safetensors.
+arguments:
+  tensors:
+    original: A named list of tensors. Currently only torch tensors are supported.
+    translation: Une liste nommée de tenseurs. Actuellement, seuls les tenseurs torch sont pris en charge.
+  path:
+    original: |-
+      The path to save the tensors to. It can also be a binary connection, as eg,
+      created with \code{file()}.
+    translation: |-
+      Le chemin pour sauvegarder les tenseurs. Il peut également s'agir d'une connexion
+       binaire, comme créé avec \code{file()}.
+  '...':
+    original: Currently unused.
+    translation: Inutilisé
+  metadata:
+    original: |-
+      An optional string that is added to the file header. Possibly
+      adding additional description to the weights.
+    translation: |-
+      Une chaîne optionnelle qui est ajoutée à l'en-tête du fichier. Permet
+       d'ajouter une description supplémentaire aux poids.
+value:
+  original: |
+    The path invisibly or a raw vector.
+  translation: |
+    Le chemin ou un vecteur brut.
+description:
+  original: |
+    Writes a list of tensors to the safetensors format
+  translation: |
+    Sauvegarde une liste de tenseurs au format safetensors.
+section{Functions}:
+  original: |-
+    \itemize{
+    \item \code{safe_serialize()}: Serializes the tensors and returns a raw vector.
+
+    }
+  translation: |-
+    \itemize{
+    \item \code{safe_serialize()}: Serilisez les tenseurs et renvoyez un vecteur brut.
+
+    }
+examples:
+  original: |+
+    if (rlang::is_installed("torch") && torch::torch_is_installed()) {
+      tensors <- list(x = torch::torch_randn(10, 10))
+      temp <- tempfile()
+      safe_save_file(tensors, temp)
+      safe_load_file(temp)
+
+      ser <- safe_serialize(tensors)
+    }
+
+  translation: ~
+untranslatable:
+- alias
+- name
+- keyword
+- concept
+- usage

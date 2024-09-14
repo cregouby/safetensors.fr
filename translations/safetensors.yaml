@@ -1,0 +1,225 @@
+title:
+  original: Low level control over safetensors files
+  translation: Contrôle de bas-niveau sur les fichiers safetensors
+description:
+  original: |
+    Low level control over safetensors files
+  translation: |
+    Contrôle de bas-niveau sur les fichiers safetensors.
+details:
+  original: |
+    Allows opening a connection to a safetensors file and query the tensor names,
+    metadata, etc.
+    Opening a connection only reads the file metadata into memory.
+    This allows for more fined grained control over reading.
+  translation: |
+    Ouvre une connection avec un fichier safetensors et requête
+    les noms des tenseurs, leur métadonnées, ...
+    L'ouverture d'une connection commence par lire les métadonnées en mémoire
+    Cela permet un contrôle fin sur le processus de lecture.
+examples:
+  original: |+
+    if (rlang::is_installed("torch") && torch::torch_is_installed()) {
+    tensors <- list(x = torch::torch_randn(10, 10))
+    temp <- tempfile()
+    safe_save_file(tensors, temp)
+    f <- safetensors$new(temp)
+    f$get_tensor("x")
+    }
+
+  translation: ~
+section{Public fields}:
+  original: |
+    \if{html}{\out{<div class="r6-fields">}}
+    \describe{
+    \item{\code{con}}{the connection object with the file}
+
+    \item{\code{metadata}}{an R list containing the metadata header in the file}
+
+    \item{\code{framework}}{the framework used to return the tensors}
+
+    \item{\code{device}}{the device to where tensors are copied}
+
+    \item{\code{max_offset}}{the largest offset boundary that was visited. Mainly
+    used in torch to find the end of the safetensors file.}
+    }
+    \if{html}{\out{</div>}}
+  translation: |
+    \if{html}{\out{<div class="r6-fields">}}
+    \describe{
+    \item{\code{con}}{l'objet de connection avec le fichier}
+
+    \item{\code{metadata}}{une liste R contenant l'en-tête des métadonnées du fichier}
+
+    \item{\code{framework}}{le framework utilisé pour renvoyer les tenseurs}
+
+    \item{\code{device}}{le périphérique vers lequel copier les tenseurs}
+
+    \item{\code{max_offset}}{la limite d'offset la plus grande visitée. Principalement
+    utilisé dans torch pour trouver la fin du fichier safetensors.}
+    }
+    \if{html}{\out{</div>}}
+section{Methods}:
+  original: |
+    \subsection{Public methods}{
+    \itemize{
+    \item \href{#method-safetensors-new}{\code{safetensors$new()}}
+    \item \href{#method-safetensors-keys}{\code{safetensors$keys()}}
+    \item \href{#method-safetensors-get_tensor}{\code{safetensors$get_tensor()}}
+    \item \href{#method-safetensors-clone}{\code{safetensors$clone()}}
+    }
+    }
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-new"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-new}{}}}
+    \subsection{Method \code{new()}}{
+    Opens the connection with the file
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$new(path, ..., framework = "torch", device = "cpu")}\if{html}{\out{</div>}}
+    }
+
+    \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+    \item{\code{path}}{Path to the file to load}
+
+    \item{\code{...}}{Unused}
+
+    \item{\code{framework}}{Framework to load the data into. Currently only torch is supported}
+
+    \item{\code{device}}{Device to copy data once loaded}
+    }
+    \if{html}{\out{</div>}}
+    }
+    }
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-keys"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-keys}{}}}
+    \subsection{Method \code{keys()}}{
+    Get the keys (tensor names) in the file
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$keys()}\if{html}{\out{</div>}}
+    }
+
+    }
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-get_tensor"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-get_tensor}{}}}
+    \subsection{Method \code{get_tensor()}}{
+    Get a tensor from its name
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$get_tensor(name)}\if{html}{\out{</div>}}
+    }
+
+    \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+    \item{\code{name}}{Name of the tensor to load}
+    }
+    \if{html}{\out{</div>}}
+    }
+    }
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-clone"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-clone}{}}}
+    \subsection{Method \code{clone()}}{
+    The objects of this class are cloneable with this method.
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$clone(deep = FALSE)}\if{html}{\out{</div>}}
+    }
+
+    \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+    \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+    }
+    }
+  translation: |
+    \subsection{Méthodes publiques}{
+    \itemize{
+    \item \href{#method-safetensors-new}{\code{safetensors$new()}}
+    \item \href{#method-safetensors-keys}{\code{safetensors$keys()}}
+    \item \href{#method-safetensors-get_tensor}{\code{safetensors$get_tensor()}}
+    \item \href{#method-safetensors-clone}{\code{safetensors$clone()}}
+    }
+    }
+
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-new"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-new}{}}}
+    \subsection{Méthode \code{new()}}{
+    Créez la connexion avec le fichier
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$new(path, ..., framework = "torch", device = "cpu")}\if{html}{\out{</div>}}
+    }
+
+    \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+    \item{\code{path}}{Chemin du fichier à charger}
+
+    \item{\code{...}}{Non utilisé}
+
+    \item{\code{framework}}{Framwork pour charger les données. Actuellement, seul torch est pris en charge}
+    
+    \item{\code{device}}{le périphérique vers lequel copier les données}
+    }
+    \if{html}{\out{</div>}}
+    }
+    }
+
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-keys"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-keys}{}}}
+    \subsection{Méthode \code{keys()}}{
+    Récupère les clés (noms des tenseurs) dans le fichier
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$keys()}\if{html}{\out{</div>}}
+    }
+
+    }
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-get_tensor"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-get_tensor}{}}}
+    \subsection{Méthode \code{get_tensor()}}{
+    Récupère un tenseur à partir de son nom
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$get_tensor(name)}\if{html}{\out{</div>}}
+    }
+
+    \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+    \item{\code{name}}{Nom du tenseur à charger}
+    }
+    \if{html}{\out{</div>}}
+    }
+    }
+
+    \if{html}{\out{<hr>}}
+    \if{html}{\out{<a id="method-safetensors-clone"></a>}}
+    \if{latex}{\out{\\hypertarget{method-safetensors-clone}{}}}
+    \subsection{Méthode \code{clone()}}{
+    Les objets de cette classe sont clonables avec cette méthode.
+    \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}\preformatted{safetensors$clone(deep = FALSE)}\if{html}{\out{</div>}}
+    }
+
+
+    \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+    \item{\code{deep}}{Faire un clonage profond.}
+    }
+    \if{html}{\out{</div>}}
+    }
+    }
+
+untranslatable:
+- alias
+- name
+- keyword
+- concept
+- usage

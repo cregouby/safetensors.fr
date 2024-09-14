@@ -1,0 +1,48 @@
+title:
+  original: Safe load a safetensors file
+  translation: Lit en toute sécurité un fichier safetensors
+arguments:
+  path:
+    original: Path to the file to load
+    translation: Chemin vers le fichier à charger
+  '...':
+    original: Unused
+    translation: Inutilisé
+  framework:
+    original: Framework to load the data into. Currently only torch is supported
+    translation: Framework pour charger les données. Actuellement, seul torch est pris en charge
+  device:
+    original: Device to copy data once loaded
+    translation: Périphérique vers lequel copier les données une fois chargées
+value:
+  original: |
+    A list with tensors in the file. The \code{metadata} attribute can be used
+    to find metadata the metadata header in the file.
+  translation: |
+    Une liste avec des tenseurs dans le fichier. L'attribut \code{metadata} peut être utilisé
+    pour trouver les métadonnées dans l'entête réservée au métadonnées du fichier.
+description:
+  original: |
+    Loads an safetensors file from disk.
+  translation: |
+    Charge un fichier safetensors depuis le disque.
+examples:
+  original: |+
+    if (rlang::is_installed("torch") && torch::torch_is_installed()) {
+      tensors <- list(x = torch::torch_randn(10, 10))
+      temp <- tempfile()
+      safe_save_file(tensors, temp)
+      safe_load_file(temp)
+    }
+
+  translation: ~
+seealso:
+  original: |
+    \link{safetensors}, \code{\link[=safe_save_file]{safe_save_file()}}
+  translation: ~
+untranslatable:
+- alias
+- name
+- keyword
+- concept
+- usage
