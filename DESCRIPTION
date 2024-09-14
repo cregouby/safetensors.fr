@@ -14,9 +14,6 @@ Description: Un format de fichiers pour la sauvegarde des tenseurs qui est sécu
   (ne permet pas l'exécution de code), rapide et facile à implémenter. 'Safetensors' 
   permet aussi l'échange inter-languages et la compatibilité inter-framework. Ça fait 
   de lui le format de choix pour la sauvegarde des poids des modèles.
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
 License:  MIT + file LICENSE
 Encoding: UTF-8
 Language: fr
