@@ -32,4 +32,4 @@ library(safetensors)
 ?model_unigram
 ```
 
-![exemple de page de documentation en français dans l'onglet Help de RStudio](images/clipboard-3327763328.png)
+![exemple de page de documentation en français dans l'onglet Help de RStudio](images/clipboard-2864160064.png)
