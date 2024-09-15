@@ -29,7 +29,7 @@ library(safetensors.fr)
 library(safetensors)
 
 # consulte l'aide normalement
-?model_unigram
+?safe_load_file
 ```
 
 ![exemple de page de documentation en français dans l'onglet Help de RStudio](images/clipboard-2864160064.png)
